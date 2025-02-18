@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:13
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: highload
+      POSTGRES_PASSWORD: highload
+      POSTGRES_DB: highload
+    ports:
+      - "25432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
